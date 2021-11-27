@@ -3,7 +3,7 @@
 
 ###
 
-**All current Visor LP managed positions are secured;, deposits for all management contract have been paused, and withdrawals available as always.**
+**All current Visor LP managed positions are secured; deposits for all management contract have been paused, and withdrawals available as always.**
 
 On Thursday, Nov 25th 1:18pm UTC an economic attack was carried out on [Visor's OHM-ETH 1% LP management contract](https://etherscan.io/token/0x65bc5c6a2630a87c2b494f36148e338dd76c054f) by a malicious contract. Users funds were secured in full and deposit caps lowered were to put a hold on new deposits until a deposit proxy is deployed into production.  
 
