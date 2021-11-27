@@ -1,13 +1,13 @@
 
-## Notes on Uniswap v3 Arbitrage
+## Notes on Uniswap v3 Risk Mitigation 
 
 ###
 
 **All current Visor LP managed positions are secured;, deposits for all management contract have been paused, and withdrawals available as always.**
 
-On Thursday, Nov 25th 1:18pm UTC an economic attack was carried out on [Visor's OHM-ETH 1% LP management contract](https://etherscan.io/token/0x65bc5c6a2630a87c2b494f36148e338dd76c054f) by a malicious arbitrageur. Users funds were secured in full and deposit caps lowered were to put a hold on new deposits until a deposit proxy is deployed into production.  
+On Thursday, Nov 25th 1:18pm UTC an economic attack was carried out on [Visor's OHM-ETH 1% LP management contract](https://etherscan.io/token/0x65bc5c6a2630a87c2b494f36148e338dd76c054f) by a malicious contract. Users funds were secured in full and deposit caps lowered were to put a hold on new deposits until a deposit proxy is deployed into production.  
 
-*Later on that day several internal test contracts being used to test management strategies with Visor treasury assets were also arbitraged, this time by an EOA. Our test contracts operated without the usual deposit safeguards (whitelist, restrictive deposit caps, limiting the share of the pool the vault represents), making these profitable transactions possible. As these transactions occurred under a looser safety standard, outside the Visor platform, we will focus on the public OHM-ETH Hypervisor.* 
+*Later on that day several internal test contracts being used to test management strategies with Visor treasury assets were also targeted, this time by an EOA. Our test contracts operated without the usual deposit safeguards (whitelist, restrictive deposit caps, limiting the share of the pool the vault represents), making these profitable transactions possible. As these transactions occurred under a looser safety standard, outside the Visor platform, we will focus on the public OHM-ETH Hypervisor.* 
 
 Here we outline the sequence of events carried out by the malicious OHM-ETH attacker.
 
@@ -69,7 +69,7 @@ While this has been sufficient for pools like WBTC-ETH 0.3% where liquidity dist
 
 **Safeguards**
 
-- Forcing dual-sided deposits at the time of an LP's initiation of a position is a  sufficient countermeasure to prevent this attack, forcing any would be arbitrageur to match his small 10 OHM deposits with large amount of WETH to obtain the same quantity of LP tokens. Additionally, this mitigation allows Visor's relatively low deposit limits to be raised significantly without raising arbitrage exposure.
+- Forcing dual-sided deposits at the time of an LP's initiation of a position is a  sufficient countermeasure to prevent this attack, forcing any would be attacker to match his small 10 OHM deposits with large amount of WETH to obtain the same quantity of LP tokens. Additionally, this mitigation allows Visor's relatively low deposit limits to be raised significantly without raising attack exposure.
 
 - Checking deposit pricing against significant deviation from a TWAP would additionally safeguard single sided deposits. 
 
